@@ -7,15 +7,14 @@
     <title>Perception Online Experiment</title>
     <link rel="stylesheet" href="src/style.css">
     <link rel="stylesheet" href="src/bootstrap.min.css">
-    <link rel="manifest" href="manifest.json">
+    <!-- <link rel="manifest" href="manifest.json"> -->
     <!-- <link rel="apple-touch-icon" href="images/s1_0_t1rt2rt3l.png"> -->
 </head>
-<body>
-  <div class="container-fluid">
-    <div class="row d-flex justify-content-center">
-        <div class="col-sm-12">
+<body style="background-color: #232323;">
+    <div class="d-flex justify-content-center">
+      <div class="col-xs-12 col-xs-offset-2">
             <div class="watch-container">
-                <div class="watch-strap-top"></div>
+                <!-- <div class="watch-strap-top"></div> -->
         
                 <div class="watch">
                     <div class="watch-face" id="imageDiv">
@@ -25,13 +24,14 @@
                     <div class="watch-crown"></div>
                 </div>
         
-                <div class="watch-strap-bottom"></div>
+                <!-- <div class="watch-strap-bottom"></div> -->
             </div>
-        </div>
+       </div>
     </div>
-    <div class="ruler"></div>
-   </div>
-      <script src="src/index.js"></script>
+  
+    <!-- <div class="ruler"></div> -->
+
+      <!-- <script src="src/index.js"></script> -->
       <script>
         var par = document.getElementById('imageDiv');
         var img = document.createElement('img');
@@ -43,15 +43,15 @@
         par.appendChild(img);
 
 
-        console.clear();
-        var el = document.querySelectorAll('.ruler');
-        var cm = el[0].offsetWidth / 10; // 1 cm in px
-        var inch = cm * 2.54; // 1 inch in px
-        var scrW = screen.width / inch; // scr width
-        var scrH = screen.height / inch; // scr height
-        var scrD = Math.sqrt(Math.pow(scrW, 2)
-                  + Math.pow(scrH, 2)); // scr diagonal
-        var roundScrD = Math.round(scrD * 10) / 10; // round diagonal
+        // console.clear();
+        // var el = document.querySelectorAll('.ruler');
+        // var cm = el[0].offsetWidth / 10; // 1 cm in px
+        // var inch = cm * 2.54; // 1 inch in px
+        // var scrW = screen.width / inch; // scr width
+        // var scrH = screen.height / inch; // scr height
+        // var scrD = Math.sqrt(Math.pow(scrW, 2)
+        //           + Math.pow(scrH, 2)); // scr diagonal
+        // var roundScrD = Math.round(scrD * 10) / 10; // round diagonal
         // alert(
         //   'SCREEN INFO\n\n' +
         //   '1 cm: ' + cm + 'px\n' +

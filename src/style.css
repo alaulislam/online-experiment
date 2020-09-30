@@ -8,12 +8,13 @@
 }
 
 body {
-	background: #eee;
+  height: 100%;
+   /* background:black; */
 	font-family: "Helvetica Neue", sans-serif;
 	font-size: 16px;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	text-rendering: optimizeLegibility;
+	text-rendering: optimizeLegibility; 
 }
 
 /* Website Header */
@@ -26,17 +27,17 @@ body {
 }
 
 /* Watch Container */
-.watch-container {
+/* .watch-container {
 	width: 300px;
 	margin: 50px auto;
-}
+} */
 
 /* Watch */
-.watch {
+/* .watch {
 	position: relative;
 	width: 300px;
 	height: 300px;
-}
+} */
 
 /* Watch Face */
 .watch-face {
@@ -118,8 +119,8 @@ img {
 .watch-crown {
 	position: relative;
 	z-index: -1;
-	width: 15px;
-	height: 26px;
+	width: 8px;
+	height: 40px;
 	top: -120px;
 	left: 210px;
 	border-radius: 5px;
