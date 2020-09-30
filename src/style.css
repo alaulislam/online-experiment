@@ -1,0 +1,276 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	background: #eee;
+	font-family: "Helvetica Neue", sans-serif;
+	font-size: 16px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+
+/* Website Header */
+.header {
+	text-align: center;
+	font-weight: 300;
+	font-size: 30px;
+	color: #999;
+	margin: 50px;
+}
+
+/* Watch Container */
+.watch-container {
+	width: 300px;
+	margin: 50px auto;
+}
+
+/* Watch */
+.watch {
+	position: relative;
+	width: 300px;
+	height: 300px;
+}
+
+/* Watch Face */
+.watch-face {
+	width: 213px;
+	height: 213px;
+  border-radius: 0%;
+  background: #eee;
+	/* background: #3F484A; Dial colour */
+  border-top: 15px solid black;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+  border-bottom: 25px solid black;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+
+  border-left: 15px solid black;
+
+  border-right: 15px solid black;
+
+
+	box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5), 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+	
+  /* Watch Face Outline */
+  
+	.watch-face-outline-point {
+		position: absolute;
+		width: 10px;
+		height: 10px;
+		background: #777;
+		left: 145px;
+		top: 24px;
+		border-radius: 100%;
+		-webkit-transform-origin: 50% 126px;
+		transform-origin: 50% 126px;
+  }
+
+
+	.point-12 { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+	.point-1 { -webkit-transform: rotate(30deg); transform: rotate(30deg); }
+	.point-2 { -webkit-transform: rotate(60deg); transform: rotate(60deg); }
+	.point-3 { -webkit-transform: rotate(90deg); transform: rotate(90deg); }
+	.point-4 { -webkit-transform: rotate(120deg); transform: rotate(120deg); }
+	.point-5 { -webkit-transform: rotate(150deg); transform: rotate(150deg); }
+	.point-6 { -webkit-transform: rotate(180deg); transform: rotate(180deg); }
+	.point-7 { -webkit-transform: rotate(210deg); transform: rotate(210deg); }
+	.point-8 { -webkit-transform: rotate(240deg); transform: rotate(240deg); }
+	.point-9 { -webkit-transform: rotate(270deg); transform: rotate(270deg); }
+	.point-10 { -webkit-transform: rotate(300deg); transform: rotate(300deg); }
+	.point-11 { -webkit-transform: rotate(330deg); transform: rotate(330deg); }
+
+	/* Watch Face Date */
+	.watch-face-date {
+    position: absolute;
+		background-color: rgba(0,0,0,0.1);
+    width: 27px;
+    height: 27px;
+    border-radius: 100%;
+    text-align: center;
+		top: 138px;
+		right: 50px;
+		font-size: 15px;
+    line-height: 27px;
+		color: #aaa;
+		font-weight: 300;
+	}
+
+
+
+/* Watch Crown */
+.watch-crown {
+	position: relative;
+	z-index: -1;
+	width: 15px;
+	height: 26px;
+	top: -120px;
+	left: 210px;
+	border-radius: 5px;
+	background: #868686;
+	border-right: 2px solid rgba(0, 0, 0, 0.05);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Watch Straps */
+.watch-strap-top {
+	position: relative;
+	z-index: -1;
+	width: 120px;
+	height: 150px;
+	left: 55px;
+	bottom: -20px;
+	background: #868686;
+	border-radius: 10px 10px 0 0;
+}
+
+.watch-strap-bottom {
+	position: relative;
+	z-index: -1;
+	width: 120px;
+	height: 150px;
+	left: 55px;
+	bottom: 100px;
+    background-color: #868686;
+	border-radius: 0 0 10px 10px;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 120px;
+    text-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.5);
+    font-size: 20px;
+    font-family: 'Great Vibes', cursive;
+}
+
+/* Website Footer */
+.footer {
+	text-align: center;
+	font-weight: 400;
+	font-size: 14px;
+	color: #999;
+	margin: 50px;
+}
+
+.footer a {
+	color: #999;
+	font-weight: 500;
+	text-decoration: none;
+}
+
+.footer a:hover {
+	text-decoration: none;
+}
+
+
+/* Sticky notes */
+h2,p{
+	font-size:100%;
+	font-weight:normal;
+	color: black;
+}
+ul,li{
+	list-style:none;
+}
+ul{
+	overflow:hidden;
+	padding:3em;
+}
+ul li a{
+	text-decoration:none;
+	color:#000;
+	/* background:#6bbcf2; */
+	background:#f6ff7a;
+	display:block;
+	height:15em;
+	width:15em;
+	padding:1em;
+	-moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+	/* Safari+Chrome */
+	-webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+	/* Opera */
+	box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+	/* -moz-transition:-moz-transform .15s linear;
+	-o-transition:-o-transform .15s linear;
+	-webkit-transition:-webkit-transform .15s linear; */
+
+	-o-transform:rotate(-3deg);
+	-webkit-transform:rotate(-3deg);
+	-moz-transform:rotate(-3deg);
+}
+ul li{
+	margin:1em;
+	float:left;
+}
+ul li h2{
+	font-size:140%;
+	font-weight:bold;
+	padding-bottom:10px;
+}
+ul li p{
+	font-family:"Reenie Beanie",arial,sans-serif;
+	font-size:180%;
+}
+ul li:nth-child(even) a{
+	-o-transform:rotate(6deg);
+	-webkit-transform:rotate(6deg);
+	-moz-transform:rotate(6deg);
+	position:relative;
+	background:#f6ff7a;
+	
+	top:5px;
+}
+ul li:nth-child(3n) a{
+	-o-transform:rotate(-3deg);
+	-webkit-transform:rotate(-3deg);
+	-moz-transform:rotate(-3deg);
+	position:relative;
+	top:-5px;
+	background:#f6ff7a;
+	/* background:#f26b6b; */
+}
+ul li:nth-child(5n) a{
+	-o-transform:rotate(5deg);
+	-webkit-transform:rotate(5deg);
+	-moz-transform:rotate(5deg);
+	position:relative;
+	top:-10px;
+	background:#f6ff7a;
+}
+ul li a:hover,ul li a:focus{
+	-moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
+	-webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+	box-shadow:10px 10px 7px rgba(0,0,0,.7);
+	-webkit-transform: scale(1.25);
+	-moz-transform: scale(1.25);
+	-o-transform: scale(1.25);
+	position:relative;
+	z-index:5;
+	text-decoration:none
+}
+
+
+
+/* .ruler {
+  width: 10cm;
+  height: 1cm;
+  background: red;
+  margin: 1cm auto 0 auto;
+} */
+
+

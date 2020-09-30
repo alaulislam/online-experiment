@@ -1,0 +1,16 @@
+
+{
+    "name": "Online Perception Study",
+    "short_name": "Online Perception Study",
+    "start_url": ".",
+    "background_color": "#6dcdb1",
+    "theme_color": "#009578",
+    "display": "standalone",
+    "icons":[
+        {
+            "src": "images/s1_0_t1rt2rt3l.png",
+            "sizes": "320x320",
+            "type": "image/png"
+        }
+    ]
+}

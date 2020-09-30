@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#009578">
+    <title>Perception Online Experiment</title>
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="src/bootstrap.min.css">
+    <link rel="manifest" href="manifest.json">
+    <!-- <link rel="apple-touch-icon" href="images/s1_0_t1rt2rt3l.png"> -->
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="watch-container">
+                <div class="watch-strap-top"></div>
+        
+                <div class="watch">
+                    <div class="watch-face" id="imageDiv">
+                        
+                    </div>
+        
+                    <div class="watch-crown"></div>
+                </div>
+        
+                <div class="watch-strap-bottom"></div>
+            </div>
+        </div>
+    </div>
+    <div class="ruler"></div>
+   </div>
+      <script src="src/index.js"></script>
+      <script>
+        var par = document.getElementById('imageDiv');
+        var img = document.createElement('img');
+        if(img && img.style) {
+          img.style.height = '213px';
+          img.style.width = '213px';
+        }
+        img.src = 'images/1.png';
+        par.appendChild(img);
+
+
+        console.clear();
+        var el = document.querySelectorAll('.ruler');
+        var cm = el[0].offsetWidth / 10; // 1 cm in px
+        var inch = cm * 2.54; // 1 inch in px
+        var scrW = screen.width / inch; // scr width
+        var scrH = screen.height / inch; // scr height
+        var scrD = Math.sqrt(Math.pow(scrW, 2)
+                  + Math.pow(scrH, 2)); // scr diagonal
+        var roundScrD = Math.round(scrD * 10) / 10; // round diagonal
+        // alert(
+        //   'SCREEN INFO\n\n' +
+        //   '1 cm: ' + cm + 'px\n' +
+        //   '1 inch: ' + inch + 'px (Dpi)\n' +
+        //   'resolution: ' + screen.width + 'x' + screen.height + 'px\n' +
+        //   'screen size: ' + roundScrD + 'inch'
+        // )
+
+
+      </script>
+</body>
+</html>
