@@ -41,11 +41,32 @@ body {
 
 /* Watch Face */
 .watch-face {
-	width: 213px;
-	height: 213px;
+  width: 213px;
+  height: 213px;
+  border-radius: 0%;
+  background: #1f1e1e;
+	/* background: #3F484A; Dial colour */
+  border-top: 15px solid black;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+
+  border-bottom: 28px solid black;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+
+
+  border-left: 18px solid black;
+
+  border-right: 18px solid black;
+  
+}
+
+.watch-face2 {
+  width: 213px;
+  height: 213px;
   border-radius: 0%;
   background: #eee;
-	/* background: #3F484A; Dial colour */
+
   border-top: 15px solid black;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -60,8 +81,9 @@ body {
   border-right: 15px solid black;
 
 
-	box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5), 1px 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5), 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
+
 
 img {
   max-width: 100%;
@@ -275,3 +297,91 @@ ul li a:hover,ul li a:focus{
 } */
 
 
+/* Button CSS */
+
+.main-hr {
+	width: 30%;
+	border: none;
+	border-top: 1px solid #c3c3c3;
+  }
+  .icon-btn {
+	width: 50px;
+	height: 50px;
+	border: 1px solid #cdcdcd;
+	background: white;
+	border-radius: 25px;
+	overflow: hidden;
+	position: relative;
+	transition: width 0.2s ease-in-out;
+  }
+  .add-btn:hover {
+	width: 120px;
+  }
+  .add-btn::before,
+  .add-btn::after {
+	transition: width 0.2s ease-in-out, border-radius 0.2s ease-in-out;
+	content: "";
+	position: absolute;
+	height: 4px;
+	width: 10px;
+	top: calc(50% - 2px);
+	background: red;
+  }
+  /* .add-btn::after {
+	right: 14px;
+	overflow: hidden;
+	border-top-right-radius: 2px;
+	border-bottom-right-radius: 2px;
+  } */
+  .add-btn::before {
+	left: 14px;
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+  }
+  .icon-btn:focus {
+	outline: none;
+  }
+  .btn-txt {
+	opacity: 0;
+	transition: opacity 0.2s;
+  }
+  /* .add-btn:hover::before,
+  .add-btn:hover::after {
+	width: 4px;
+	border-radius: 2px;
+  } */
+  .add-btn:hover .btn-txt {
+	opacity: 1;
+  }
+  /* .add-icon::after,
+  .add-icon::before {
+	transition: all 0.2s ease-in-out;
+	content: "";
+	position: absolute;
+	height: 20px;
+	width: 2px;
+	top: calc(50% - 10px);
+	background: red;
+	overflow: hidden;
+  } */
+  .add-icon::before {
+	left: 22px;
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+  }
+  /* .add-icon::after {
+	right: 22px;
+	border-top-right-radius: 2px;
+	border-bottom-right-radius: 2px;
+  } */
+  .add-btn:hover .add-icon::before {
+	left: 15px;
+	height: 4px;
+	top: calc(50% - 2px);
+  }
+  /* .add-btn:hover .add-icon::after {
+	right: 15px;
+	height: 4px;
+	top: calc(50% - 2px);
+  }
+   */
