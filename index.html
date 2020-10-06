@@ -8,7 +8,9 @@
     <title>Perception Online Experiment</title>
     <link rel="stylesheet" href="src/style.css">
     <link rel="stylesheet" href="src/bootstrap.min.css">
-    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <!-- <link rel="stylesheet" href="src/all.min.css"> -->
+    <!-- <link rel="manifest" href="manifest.json"> -->
     <!-- <link rel="apple-touch-icon" href="images/s1_0_t1rt2rt3l.png"> -->
   </head>
 <body style="background-color: #232323;">
@@ -17,18 +19,51 @@
             <div class="watch-container">
                 <!-- <div class="watch-strap-top"></div> -->
         
-                <div class="watch" style="margin-top: 80px !important;">
+                <!-- <div class="watch" style="margin-top: 80px !important;">
                     <div class="watch-face" id="imageDiv"> 
                     </div>
                     <div class="watch-crown"></div>
-                </div>
+                 
+                </div> -->
+
+                <!-- <div class="watch" style="margin-top: 80px !important;">
+                  <div class="watch-face2" id="imageDiv2"></div>
+                </div> -->
                 
                 <div class="watch" style="margin-top: 80px !important;">
                   <div class="watch-face2" id="imageDiv2"> 
+                    <div class="slideshow-container">
+                      <div class="slideshow-inner">
+                      <div class="mySlides">
+                        <img  src='images/1.png' style='width: 213px'/>
+                          <!-- <div class="content">Lorem ipsum dolor sit amet</div>   -->
+                      </div>  
+                      <div class="mySlides">
+                          <img src="images/2.png" style='width: 100%;'/>  
+                      </div>  
+                
+                      <div class="mySlides">
+                          <img src="images/3.png"/>  
+                      </div>  
+                      <div class="mySlides">
+                          <img src="images/4.png"/>  
+                      </div>  
+                      </div>
+                      </div>
+                      <!-- Navigation arrows -->  
+                      <!-- <a class="left" onclick="nextSlide(-1)">❮</a>  
+                      <a class="right" onclick="nextSlide(1)">❯</a>   -->
+                    </div>
                   </div>
-                  <div class="watch-crown"></div>
+                  <button type="button" class="btn btn-primary btn-sm" onclick="plusSlides(-1)"><i class="fas fa-lg fa-caret-left"></i></button>
+                  <button type="button" class="btn btn-primary btn-sm" onclick="plusSlides(1)"><i class="fas fa-lg fa-caret-right"></i></button>
+               
+
+
+                  <!-- <div class="watch-crown"></div> -->
+                 
               </div>
-        
+
                 <!-- <div class="watch-strap-bottom"></div> -->
             </div>
        </div>
@@ -36,17 +71,17 @@
   
     <!-- <div class="ruler"></div> -->
 
-      <script src="src/index.js"></script>
+      <!-- <script src="src/index.js"></script> -->
     
       <script>
-        var par = document.getElementById('imageDiv');
-        var img = document.createElement('img');
-        if(img && img.style) {
-          img.style.height = '213px';
-          img.style.width = '213px';
-        }
-        img.src = 'images/1.png';
-        par.appendChild(img);
+        // var par = document.getElementById('imageDiv');
+        // var img = document.createElement('img');
+        // if(img && img.style) {
+        //   img.style.height = '213px';
+        //   img.style.width = '213px';
+        // }
+        // img.src = 'images/1.png';
+        // par.appendChild(img);
 
 
         // console.clear();
@@ -65,6 +100,76 @@
         //   'resolution: ' + screen.width + 'x' + screen.height + 'px\n' +
         //   'screen size: ' + roundScrD + 'inch'
         // )
+
+        var slideIndex = 1;
+
+        var myTimer;
+
+        var slideshowContainer;
+
+        window.addEventListener("load",function() {
+            showSlides(slideIndex);
+            myTimer = setInterval(function(){plusSlides(1)}, 4000);
+          
+            //COMMENT OUT THE LINE BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
+            slideshowContainer = document.getElementsByClassName('slideshow-inner')[0];
+          
+            //UNCOMMENT OUT THE LINE BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
+            // slideshowContainer = document.getElementsByClassName('slideshow-container')[0];
+          
+            slideshowContainer.addEventListener('mouseenter', pause)
+            slideshowContainer.addEventListener('mouseleave', resume)
+        })
+
+        // NEXT AND PREVIOUS CONTROL
+        function plusSlides(n){
+          clearInterval(myTimer);
+          if (n < 0){
+            showSlides(slideIndex -= 1);
+          } else {
+          showSlides(slideIndex += 1); 
+          }
+          
+          //COMMENT OUT THE LINES BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
+          
+          if (n === -1){
+            myTimer = setInterval(function(){plusSlides(n + 2)}, 4000);
+          } else {
+            myTimer = setInterval(function(){plusSlides(n + 1)}, 4000);
+          }
+        }
+
+        //Controls the current slide and resets interval if needed
+        function currentSlide(n){
+          clearInterval(myTimer);
+          myTimer = setInterval(function(){plusSlides(n + 1)}, 4000);
+          showSlides(slideIndex = n);
+        }
+
+        function showSlides(n){
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          // var dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+          }
+          // for (i = 0; i < dots.length; i++) {
+          //     dots[i].className = dots[i].className.replace(" active", "");
+          // }
+          slides[slideIndex-1].style.display = "block";
+          // dots[slideIndex-1].className += " active";
+        }
+
+        pause = () => {
+          clearInterval(myTimer);
+        }
+
+        resume = () =>{
+          clearInterval(myTimer);
+          myTimer = setInterval(function(){plusSlides(slideIndex)}, 4000);
+        }
 
 
       </script>
