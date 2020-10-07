@@ -8,6 +8,9 @@
     <title>Perception Online Experiment</title>
     <link rel="stylesheet" href="src/style.css">
     <link rel="stylesheet" href="src/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous"></script>
     <!-- <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/> -->
     <!-- <link rel="stylesheet" href="src/all.min.css"> -->
     <!-- <link rel="manifest" href="manifest.json"> -->
@@ -15,59 +18,71 @@
   </head>
 <body style="background-color: #232323;">
     <div class="d-flex justify-content-center">
-      <div class="col-xs-12 col-xs-offset-2">
-            <div class="watch-container">
-                <!-- <div class="watch-strap-top"></div> -->
-        
-                <!-- <div class="watch" style="margin-top: 80px !important;">
-                    <div class="watch-face" id="imageDiv"> 
-                    </div>
-                    <div class="watch-crown"></div>
-                 
-                </div> -->
-
-                <!-- <div class="watch" style="margin-top: 80px !important;">
-                  <div class="watch-face2" id="imageDiv2"></div>
-                </div> -->
-                
-                <div class="watch" style="margin-top: 80px !important;">
-                  <div class="watch-face2" id="imageDiv2"> 
-                    <div class="slideshow-container">
-                      <div class="slideshow-inner">
-                      <div class="mySlides">
-                        <img  src='images/1.png' style='width: 213px'/>
-                          <!-- <div class="content">Lorem ipsum dolor sit amet</div>   -->
-                      </div>  
-                      <div class="mySlides">
-                          <img src="images/2.png" style='width: 100%;'/>  
-                      </div>  
-                
-                      <div class="mySlides">
-                          <img src="images/3.png"/>  
-                      </div>  
-                      <div class="mySlides">
-                          <img src="images/4.png"/>  
-                      </div>  
+            <div class="col-xs-12 col-xs-offset-2">
+              <div class="watch-container">
+                  <!-- <div class="watch-strap-top"></div> -->
+          
+                  <!-- <div class="watch" style="margin-top: 80px !important;">
+                      <div class="watch-face" id="imageDiv"> 
                       </div>
+                      <div class="watch-crown"></div>
+                  
+                  </div> -->
+
+                  <!-- <div class="watch" style="margin-top: 80px !important;">
+                    <div class="watch-face2" id="imageDiv2"></div>
+                  </div> -->
+                  
+                  <div class="watch" style="margin-top: 80px !important;">
+                    <div class="watch-face2" id="imageDiv2"> 
+                      <input type="hidden" id="custId" name="custId" value="">
+                      <div class="slideshow-container">
+                        <div class="slideshow-inner">
+                        <div class="mySlides" id="img-1">
+                          <img  src='images/1.png'/>
+                            <!-- <div class="content">Lorem ipsum dolor sit amet</div>   -->
+                        </div>  
+                        <div class="mySlides" id="img-2">
+                            <img src="images/2.png"/>  
+                        </div>  
+                  
+                        <div class="mySlides" id="img-3">
+                            <img src="images/3.png"/>  
+                        </div>  
+                        <div class="mySlides" id="img-4">
+                            <img src="images/4.png"/>  
+                        </div>  
+                        </div>
+                        </div>
+
                       </div>
-
                     </div>
-                  </div>
-                  <!-- <button type="button" class="btn btn-primary btn-sm" onclick="plusSlides(-1)"><i class="fas fa-lg fa-caret-left"></i></button>
-                  <button type="button" class="btn btn-primary btn-sm" onclick="plusSlides(1)"><i class="fas fa-lg fa-caret-right"></i></button> -->
-                  <button type="button" class="btn btn-primary btn-sm" onclick="plusSlides(-1)"><</button>
-                  <button type="button" class="btn btn-primary btn-sm" onclick="plusSlides(1)">></button>
-               
-
-
-                  <!-- <div class="watch-crown"></div> -->
-                 
+                    <!-- <button type="button" class="btn btn-primary btn-sm" onclick="plusSlides(-1)"><i class="fas fa-lg fa-caret-left"></i></button>
+                    <button type="button" class="btn btn-primary btn-sm" onclick="plusSlides(1)"><i class="fas fa-lg fa-caret-right"></i></button> -->
+                
+                    <!-- <div class="watch-crown"></div> -->
+                  
               </div>
-
                 <!-- <div class="watch-strap-bottom"></div> -->
+                <div class="d-flex justify-content-center" style="margin-top: 10px;">
+                    <div class="col-xs-6">
+                      <button type="button" class="btn btn-primary btn-md" onclick="plusSlides(-1)"><</button>
+                    </div>
+                    <div class="col-xs-6" style="margin-left: 10px;">
+                    <button type="button" class="btn btn-primary btn-md" onclick="plusSlides(1)">></button>
+                    </div>
+               </div>
+               <div class="d-flex justify-content-center" style="margin-top: 10px;">
+                <div class="col-xs-6">
+                  <button type="button" class="btn btn-info btn-md" onclick="incorrectAns()"><</button>
+                </div>
+                <div class="col-xs-6" style="margin-left: 10px;">
+                <button type="button" class="btn btn-info btn-md" onclick="correctAns()">></button>
+                </div>
+           </div>
             </div>
+           
        </div>
-    </div>
   
     <!-- <div class="ruler"></div> -->
 
@@ -112,13 +127,13 @@
             myTimer = setInterval(function(){plusSlides(1)}, 4000);
           
             //COMMENT OUT THE LINE BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
-            slideshowContainer = document.getElementsByClassName('slideshow-inner')[0];
+            //slideshowContainer = document.getElementsByClassName('slideshow-inner')[0];
           
             //UNCOMMENT OUT THE LINE BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
             // slideshowContainer = document.getElementsByClassName('slideshow-container')[0];
           
-            slideshowContainer.addEventListener('mouseenter', pause)
-            slideshowContainer.addEventListener('mouseleave', resume)
+            // slideshowContainer.addEventListener('mouseenter', pause)
+            // slideshowContainer.addEventListener('mouseleave', resume)
         })
 
         // NEXT AND PREVIOUS CONTROL
@@ -159,18 +174,29 @@
           //     dots[i].className = dots[i].className.replace(" active", "");
           // }
           slides[slideIndex-1].style.display = "block";
+          $('#custId').val();
+          // console.log(slides[slideIndex-1].id);
+          $('#custId').val(slides[slideIndex-1].id);
           // dots[slideIndex-1].className += " active";
+          // $('input[name="myText"]:eq(slideIndex-1)').attr('id')
         }
 
-        pause = () => {
-          clearInterval(myTimer);
-        }
+        // pause = () => {
+        //   clearInterval(myTimer);
+        // }
 
-        resume = () =>{
-          clearInterval(myTimer);
-          myTimer = setInterval(function(){plusSlides(slideIndex)}, 4000);
-        }
+        // resume = () =>{
+        //   clearInterval(myTimer);
+        //   myTimer = setInterval(function(){plusSlides(slideIndex)}, 4000);
+        // }
 
+          function correctAns(){
+            var val = $('#custId').val();
+            alert(val)
+          }
+          function incorrectAns(){
+            alert('in-correct active')
+          }
 
       </script>
 </body>
